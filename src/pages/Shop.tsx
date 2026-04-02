@@ -97,13 +97,28 @@ export default function Shop() {
   return (
     <div className="bg-beige/20 min-h-screen pb-24">
       {/* Header */}
-      <section className="bg-dark text-white py-20 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full -mr-32 -mt-32 blur-3xl" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">Herbal Shop</h1>
-          <p className="text-white/60 max-w-xl">Order our premium herbal treatments for natural healing at home.</p>
-        </div>
-      </section>
+      <section className="relative text-white py-20 overflow-hidden">
+  {/* Background Image */}
+  <img
+    src="/images/shop-bg.jpg" // put your image in public/images/
+    alt="Herbal Shop Background"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+
+  {/* Dark Overlay for readability */}
+  <div className="absolute inset-0 bg-dark/70" />
+
+  {/* Decorative Blur Effect */}
+  <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full -mr-32 -mt-32 blur-3xl" />
+
+  {/* Content */}
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">Herbal Shop</h1>
+    <p className="text-white/60 max-w-xl">
+      Order our premium herbal treatments for natural healing at home.
+    </p>
+  </div>
+</section>
 
       {/* Product Grid */}
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

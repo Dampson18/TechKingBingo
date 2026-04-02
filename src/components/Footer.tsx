@@ -8,12 +8,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="space-y-6">
-            <div className="flex items-center gap-2">
-              <div className="bg-primary p-2 rounded-full">
-                <Leaf className="text-white w-6 h-6" />
-              </div>
-              <span className="font-serif text-2xl font-bold tracking-tight">GHMC</span>
-            </div>
+            <div className="flex items-center gap-3">
+  <img 
+    src="/images/logo.png"
+    alt="GHMC Logo"
+    className="h-12 w-auto object-contain"
+  />
+  <span className="font-serif text-2xl font-bold tracking-tight">
+    GHMC
+  </span>
+</div>
             <p className="text-white/60 text-sm leading-relaxed">
               Gyenyamdi Herbal and Massage Center (GHMC) provides natural healing solutions and professional wellness services for a healthier life.
             </p>

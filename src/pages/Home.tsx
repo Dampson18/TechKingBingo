@@ -15,12 +15,15 @@ export default function Home() {
       <section className="relative h-[90vh] flex items-center justify-center text-white overflow-hidden">
         {/* Video Placeholder Overlay */}
         <div className="absolute inset-0 bg-black/50 z-10" />
-        <img 
-          src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=1920" 
-          alt="Spa Background" 
-          className="absolute inset-0 w-full h-full object-cover"
-          referrerPolicy="no-referrer"
-        />
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            >
+            <source src="/images/hero.mp4" type="video/mp4" />
+            </video>
         
         <div className="relative z-20 max-w-4xl mx-auto px-4 text-center">
           <motion.div
@@ -68,33 +71,38 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { 
-                title: "Hot Stone Massage", 
-                desc: "Deeply relaxing therapy using heated basalt stones to melt away tension.",
-                icon: <Sparkles className="w-8 h-8 text-gold" />,
-                link: "/services"
-              },
-              { 
-                title: "Herbal Healing", 
-                desc: "Natural treatments for chronic conditions using potent organic herbs.",
-                icon: <Leaf className="w-8 h-8 text-primary" />,
-                link: "/services"
-              },
-              { 
-                title: "Deep Tissue Massage", 
-                desc: "Targeted pressure to release chronic muscle tension and knots.",
-                icon: <Heart className="w-8 h-8 text-red-400" />,
-                link: "/services"
-              }
-            ].map((service, idx) => (
+  { 
+    title: "Hot Stone Massage", 
+    desc: "Deeply relaxing therapy using heated basalt stones to melt away tension.",
+    image: "/images/hot-stone-massage.jpg",
+    link: "/services"
+  },
+  { 
+    title: "Herbal Healing", 
+    desc: "Natural treatments for chronic conditions using potent organic herbs.",
+    image: "/images/herbal-healing.jpg",
+    link: "/services"
+  },
+  { 
+    title: "Deep Tissue Massage", 
+    desc: "Targeted pressure to release chronic muscle tension and knots.",
+    image: "/images/deep-tissue-massage.jpg",
+    link: "/services"
+  }
+].map((service, idx) => (
               <motion.div
                 key={idx}
                 whileHover={{ y: -10 }}
                 className="p-8 bg-beige/30 rounded-3xl border border-primary/5 hover:border-primary/20 transition-all group"
               >
-                <div className="mb-6 p-4 bg-white rounded-2xl w-fit shadow-sm group-hover:shadow-md transition-all">
-                  {service.icon}
-                </div>
+                <div className="mb-6 overflow-hidden rounded-2xl relative">
+  <img
+    src={service.image}
+    alt={service.title}
+    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+  />
+  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-all" />
+</div>
                 <h3 className="text-2xl font-serif font-bold mb-4">{service.title}</h3>
                 <p className="text-dark/60 mb-6 leading-relaxed">{service.desc}</p>
                 <Link to={service.link} className="text-primary font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
@@ -123,7 +131,7 @@ export default function Home() {
               </div>
             </div>
             <div className="space-y-8">
-              <h2 className="text-4xl md:text-5xl font-serif font-bold leading-tight">Why Choose GHMC?</h2>
+              <h2 className="text-4xl md:text-5xl font-serif font-bold leading-tight">Why Choose Gyenyamdi Herbal & Massage Center?</h2>
               <div className="space-y-6">
                 {[
                   { title: "Natural Herbal Solutions", desc: "We use only the finest organic herbs for our treatments.", icon: <Leaf className="w-6 h-6" /> },

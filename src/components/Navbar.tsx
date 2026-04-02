@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/src/lib/utils";
 
+
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "Services", path: "/services" },
@@ -22,10 +23,15 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="bg-primary p-2 rounded-full group-hover:rotate-12 transition-transform">
-              <Leaf className="text-white w-6 h-6" />
-            </div>
-            <span className="font-serif text-xl font-bold text-primary tracking-tight">GHMC</span>
+<img 
+  src="/images/logo.png"
+  alt="GHMC Logo"
+  className="h-12 md:h-16 w-auto object-contain"
+/>
+
+<span className="font-serif text-xl font-bold text-primary tracking-tight">
+  GHMC
+</span>
           </Link>
 
           {/* Desktop Nav */}

@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
@@ -9,6 +10,33 @@ import Contact from "./pages/Contact";
 import Admin from "./pages/Admin";
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (document.readyState === "complete") {
+      setLoading(false);
+      return;
+    }
+
+    const onLoad = () => setLoading(false);
+    window.addEventListener("load", onLoad);
+
+    const timeoutId = window.setTimeout(() => setLoading(false), 1500);
+
+    return () => {
+      window.removeEventListener("load", onLoad);
+      window.clearTimeout(timeoutId);
+    };
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="app-loader-overlay">
+        <div className="loader" />
+      </div>
+    );
+  }
+
   return (
     <Router>
       <Layout>

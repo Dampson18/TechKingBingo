@@ -6,20 +6,34 @@ export default function About() {
   return (
     <div className="bg-white min-h-screen pb-24">
       {/* Hero */}
-      <section className="bg-beige/30 py-24 border-b border-primary/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-serif font-bold mb-6 text-dark"
-          >
-            About GHMC
-          </motion.h1>
-          <p className="text-xl text-dark/60 max-w-2xl mx-auto leading-relaxed">
-            Rooted in tradition, powered by nature, and dedicated to your holistic wellness.
-          </p>
-        </div>
-      </section>
+     <section className="relative text-dark py-24 overflow-hidden border-b border-primary/5">
+  {/* Background Image */}
+  <img
+    src="/images/about-bg.jpg" // Put your About page bg in public/images/
+    alt="About GHMC Background"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+
+  {/* Overlay for readability */}
+  <div className="absolute inset-0 bg-beige/60" />
+
+  {/* Optional Blur/Decorative Shape */}
+  <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full -mr-48 -mt-48 blur-3xl" />
+
+  {/* Content */}
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+    <motion.h1 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="text-5xl md:text-6xl font-serif font-bold mb-6 text-dark"
+    >
+      About GHMC
+    </motion.h1>
+    <p className="text-xl text-dark/80 max-w-2xl mx-auto leading-relaxed">
+      Rooted in tradition, powered by nature, and dedicated to your holistic wellness.
+    </p>
+  </div>
+</section>
 
       {/* Content */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

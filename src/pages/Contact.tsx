@@ -18,20 +18,34 @@ export default function Contact() {
   return (
     <div className="bg-white min-h-screen pb-24">
       {/* Header */}
-      <section className="bg-primary text-white py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-serif font-bold mb-6"
-          >
-            Get in Touch
-          </motion.h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Have questions? We're here to help you on your path to wellness.
-          </p>
-        </div>
-      </section>
+      <section className="relative text-white py-24 overflow-hidden">
+  {/* Background Image */}
+  <img
+    src="/images/contact-bg.jpg" // put your image in public/images/
+    alt="Contact GHMC Background"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+
+  {/* Dark Overlay for readability */}
+  <div className="absolute inset-0 bg-primary/70" />
+
+  {/* Optional Blur / Decorative Shape */}
+  <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -mr-48 -mt-48 blur-3xl" />
+
+  {/* Content */}
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+    <motion.h1 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="text-5xl md:text-6xl font-serif font-bold mb-6"
+    >
+      Get in Touch
+    </motion.h1>
+    <p className="text-xl text-white/80 max-w-2xl mx-auto">
+      Have questions? We're here to help you on your path to wellness.
+    </p>
+  </div>
+</section>
 
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">

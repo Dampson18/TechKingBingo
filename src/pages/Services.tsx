@@ -26,21 +26,35 @@ export default function Services() {
   return (
     <div className="bg-beige/20 min-h-screen pb-24">
       {/* Header */}
-      <section className="bg-primary text-white py-24 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -mr-48 -mt-48 blur-3xl" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-serif font-bold mb-6"
-          >
-            Our Healing Services
-          </motion.h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Explore our comprehensive range of natural herbal treatments and professional spa therapies.
-          </p>
-        </div>
-      </section>
+      <section className="relative text-white py-24 overflow-hidden">
+  {/* Background Image */}
+  <img
+    src="/images/services-bg.jpg"
+    alt="Services Background"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-primary/70" />
+
+  {/* Existing Blur Effect */}
+  <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -mr-48 -mt-48 blur-3xl" />
+
+  {/* Content */}
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+    <motion.h1 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="text-5xl md:text-6xl font-serif font-bold mb-6"
+    >
+      Our Healing Services
+    </motion.h1>
+
+    <p className="text-xl text-white/80 max-w-2xl mx-auto">
+      Explore our comprehensive range of natural herbal treatments and professional spa therapies.
+    </p>
+  </div>
+</section>
 
       {/* Herbal Treatments */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
