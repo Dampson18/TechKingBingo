@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import {
   ArrowRight,
   BarChart3,
+  BriefcaseBusiness,
   Calendar,
-  Code2,
-  Globe,
+  CheckCircle2,
+  Compass,
   Layers3,
-  MapPin,
   MessageCircle,
   MonitorSmartphone,
   Palette,
@@ -16,119 +16,239 @@ import {
   ShieldCheck,
   Sparkles,
   Star,
+  Workflow,
 } from "lucide-react";
 
 const services = [
   {
     title: "Website Design",
-    desc: "Custom business websites that look premium, load fast, and turn visitors into customers.",
+    desc: "Custom websites that help businesses look polished, credible, and ready to convert visitors into customers.",
     image: "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&q=80&w=900",
     link: "/services",
-    icon: <MonitorSmartphone className="w-5 h-5" />,
+    icon: <MonitorSmartphone className="h-5 w-5" />,
   },
   {
     title: "Branding & Identity",
-    desc: "Clear positioning, memorable visuals, and strong messaging to make your business stand out.",
+    desc: "Clear positioning, memorable visuals, and stronger messaging that make your business stand out online.",
     image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=900",
     link: "/services",
-    icon: <Palette className="w-5 h-5" />,
+    icon: <Palette className="h-5 w-5" />,
   },
   {
     title: "SEO & Growth",
-    desc: "Search visibility, content strategy, and digital systems that attract qualified leads.",
+    desc: "Search visibility and digital strategy designed to help your business attract more qualified attention.",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=900",
     link: "/services",
-    icon: <BarChart3 className="w-5 h-5" />,
+    icon: <BarChart3 className="h-5 w-5" />,
   },
 ];
 
 const reasons = [
-  { title: "Strategy-first design", desc: "We build digital experiences that support your goals, not just visuals.", icon: <Layers3 className="w-6 h-6" /> },
-  { title: "Conversion-focused websites", desc: "Every page is designed to guide visitors toward action and trust.", icon: <ShieldCheck className="w-6 h-6" /> },
-  { title: "Reliable digital partnership", desc: "From your first idea to launch and beyond, we stay committed to your growth.", icon: <Rocket className="w-6 h-6" /> },
+  { title: "Professional solutions", desc: "Clean digital experiences designed to reflect the quality of your business.", icon: <ShieldCheck className="h-6 w-6" /> },
+  { title: "Modern technology", desc: "A strong, current tech aesthetic that keeps your brand relevant and competitive.", icon: <Layers3 className="h-6 w-6" /> },
+  { title: "Reliable support", desc: "Clear communication, dependable delivery, and ongoing guidance after launch.", icon: <Rocket className="h-6 w-6" /> },
+  { title: "Customer-focused service", desc: "Every project is shaped around your goals, audience, and real business needs.", icon: <Compass className="h-6 w-6" /> },
 ];
 
-const testimonials = [
-  { name: "Nana K.", quote: "TechKing Bingo transformed our brand presence and gave our business a website that finally feels premium.", rating: 5 },
-  { name: "Akwasi D.", quote: "Their team made the process simple and delivered a site that looks sharp and performs well.", rating: 5 },
-  { name: "Mercy T.", quote: "We now have a stronger online presence and a clearer message for our customers.", rating: 5 },
+const projects = [
+  {
+    name: "Business Website Refresh",
+    description: "A modern website design update for a professional service brand that needed a stronger digital presence.",
+    tags: ["UI/UX", "Web Design", "Branding"],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=900",
+  },
+  {
+    name: "Digital Growth Landing Page",
+    description: "A focused landing page concept built to improve clarity, trust, and lead generation for a growing business.",
+    tags: ["Landing Page", "Strategy", "SEO"],
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=900",
+  },
+  {
+    name: "Tech Brand Identity Direction",
+    description: "A visual identity and web direction concept supporting a brighter, more modern technology-focused brand.",
+    tags: ["Branding", "Visual Direction", "Marketing"],
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=900",
+  },
+];
+
+const processSteps = [
+  { number: "01", title: "Discuss", description: "We learn about your business goals, audience, and what success looks like." },
+  { number: "02", title: "Plan", description: "We map the right digital direction, structure, and user experience for your project." },
+  { number: "03", title: "Build", description: "We design and develop a solution that is modern, practical, and easy to use." },
+  { number: "04", title: "Deliver", description: "We launch the project and provide support so your digital presence keeps working for you." },
+];
+
+const placeholderTestimonials = [
+  {
+    quote: "Add a short client quote here to show confidence, clarity, and satisfaction with your work.",
+    note: "Editable testimonial placeholder",
+  },
+  {
+    quote: "Add a second customer review or project feedback here when you are ready to feature real results.",
+    note: "Replace with live testimonial",
+  },
+  {
+    quote: "This section can be updated with real client feedback to strengthen trust and credibility.",
+    note: "Simple placeholder content",
+  },
 ];
 
 export default function Home() {
   return (
-    <div className="overflow-hidden">
-      <section className="relative h-[90vh] flex items-center justify-center text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/60 z-10" />
-        <img
-          src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=1800"
-          alt="TechKing Bingo creative workspace"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-
-        <div className="relative z-20 max-w-5xl mx-auto px-4 text-center">
+    <div className="overflow-hidden bg-white">
+      <section className="relative isolate overflow-hidden pt-28 pb-18 sm:pt-32 lg:pt-36">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(215,40,40,0.15),transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(249,182,45,0.12),transparent_25%)]" />
+        <div className="section-shell relative grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7 }}
+            className="max-w-2xl"
           >
-            <span className="inline-block px-4 py-1.5 bg-gold/20 backdrop-blur-md rounded-full text-gold text-sm font-bold tracking-widest uppercase mb-6 border border-gold/30">
+            <span className="inline-flex items-center rounded-full border border-primary/10 bg-primary/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-primary">
               Digital Growth Studio
             </span>
-            <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight">
-              Build a stronger <span className="text-gold">online presence</span>
+            <h1 className="mt-6 text-5xl font-bold leading-[1.02] text-dark sm:text-6xl lg:text-7xl">
+              Build a stronger <span className="text-primary">online presence</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 mb-10 max-w-3xl mx-auto leading-relaxed">
-              TechKing Bingo creates modern websites, branding systems, and digital experiences that help businesses grow with confidence.
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-dark/70">
+              TechKing Bingo designs and builds modern digital experiences that help businesses look credible, communicate clearly, and grow with confidence.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
                 to="/booking"
-                className="bg-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-primary/90 transition-all shadow-xl shadow-primary/30 flex items-center justify-center gap-2"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-4 text-base font-semibold text-white shadow-xl shadow-primary/20 transition hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                <Calendar className="w-5 h-5" />
-                Book a Free Call
+                Get Started
+                <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                to="/shop"
-                className="bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-beige transition-all flex items-center justify-center gap-2"
+                to="/services"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-primary/15 bg-white px-7 py-4 text-base font-semibold text-dark transition hover:border-primary hover:text-primary"
               >
-                <Sparkles className="w-5 h-5" />
-                Explore Packages
+                View Our Services
               </Link>
+            </div>
+
+            <div className="mt-10 flex flex-wrap gap-4 text-sm text-dark/65">
+              <div className="flex items-center gap-2 rounded-full bg-white px-3 py-2 shadow-sm ring-1 ring-dark/5">
+                <CheckCircle2 className="h-4 w-4 text-primary" />
+                Website design
+              </div>
+              <div className="flex items-center gap-2 rounded-full bg-white px-3 py-2 shadow-sm ring-1 ring-dark/5">
+                <CheckCircle2 className="h-4 w-4 text-primary" />
+                Branding systems
+              </div>
+              <div className="flex items-center gap-2 rounded-full bg-white px-3 py-2 shadow-sm ring-1 ring-dark/5">
+                <CheckCircle2 className="h-4 w-4 text-primary" />
+                Growth support
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="relative"
+          >
+            <div className="absolute -left-10 top-10 h-28 w-28 rounded-full bg-primary/10 blur-2xl" />
+            <div className="absolute -right-8 bottom-8 h-32 w-32 rounded-full bg-gold/20 blur-2xl" />
+
+            <div className="relative overflow-hidden rounded-[32px] border border-primary/10 bg-white p-4 shadow-[0_30px_80px_rgba(22,22,22,0.12)]">
+              <div className="overflow-hidden rounded-[24px]">
+                <img
+                  src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=1200"
+                  alt="TechKing Bingo workspace"
+                  className="h-[540px] w-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+
+              <div className="absolute left-8 top-8 rounded-2xl border border-white/40 bg-white/85 p-4 shadow-lg backdrop-blur-md">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white">
+                    <BriefcaseBusiness className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-[11px] uppercase tracking-[0.2em] text-dark/45">Project</p>
+                    <p className="text-sm font-bold text-dark">Digital growth</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute bottom-8 right-8 rounded-2xl bg-dark p-4 text-white shadow-xl">
+                <p className="text-xs uppercase tracking-[0.2em] text-white/55">Conversion focus</p>
+                <p className="mt-1 text-2xl font-bold text-gold">+30%</p>
+                <p className="text-xs text-white/70">Average uplift</p>
+              </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-dark mb-4">What we do best</h2>
-            <p className="text-dark/60 max-w-2xl mx-auto">We design and build digital experiences that help your business look credible, attract demand, and convert attention into growth.</p>
+      <section id="about" className="py-24 bg-white">
+        <div className="section-shell grid items-center gap-12 lg:grid-cols-2">
+          <div className="space-y-8">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">About TechKing</p>
+              <h2 className="mt-4 text-4xl font-bold text-dark sm:text-5xl">A digital partner for businesses ready to grow.</h2>
+            </div>
+            <p className="text-lg leading-relaxed text-dark/70">
+              TechKing Bingo helps businesses build a stronger online presence through premium websites, clear digital branding, and practical growth-focused solutions.
+            </p>
+            <div className="rounded-3xl border border-primary/10 bg-primary/5 p-6 text-primary shadow-sm">
+              “We turn ideas into digital experiences that help businesses stand out and move forward with confidence.”
+            </div>
+            <Link to="/about" className="inline-flex items-center gap-2 text-base font-semibold text-primary hover:text-primary/80">
+              Learn More
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="relative">
+            <div className="absolute -left-6 top-8 h-24 w-24 rounded-full bg-primary/10 blur-2xl" />
+            <div className="absolute -bottom-6 right-8 h-24 w-24 rounded-full bg-gold/20 blur-2xl" />
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000"
+              alt="TechKing team working"
+              className="relative h-[500px] w-full rounded-[32px] object-cover shadow-[0_25px_65px_rgba(23,24,29,0.15)]"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-surface py-24">
+        <div className="section-shell">
+          <div className="mx-auto mb-14 max-w-2xl text-center">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">Our services</p>
+            <h2 className="mt-4 text-4xl font-bold text-dark sm:text-5xl">What we do best</h2>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3">
             {services.map((service, idx) => (
               <motion.div
                 key={idx}
-                whileHover={{ y: -10 }}
-                className="p-8 bg-beige/30 rounded-3xl border border-primary/5 hover:border-primary/20 transition-all group"
+                whileHover={{ y: -8 }}
+                className="group overflow-hidden rounded-[28px] border border-dark/5 bg-white p-6 shadow-[0_14px_35px_rgba(17,17,17,0.04)] transition-all hover:border-primary/20 hover:shadow-[0_18px_45px_rgba(215,40,40,0.08)]"
               >
-                <div className="mb-6 overflow-hidden rounded-2xl relative">
+                <div className="overflow-hidden rounded-2xl">
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="h-52 w-full object-cover transition duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-all" />
                 </div>
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                <div className="mt-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                   {service.icon}
                 </div>
-                <h3 className="text-2xl font-serif font-bold mb-4">{service.title}</h3>
-                <p className="text-dark/60 mb-6 leading-relaxed">{service.desc}</p>
-                <Link to={service.link} className="text-primary font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
-                  Learn More <ArrowRight className="w-4 h-4" />
+                <h3 className="mt-5 text-2xl font-bold text-dark">{service.title}</h3>
+                <p className="mt-3 text-base leading-relaxed text-dark/65">{service.desc}</p>
+                <Link to={service.link} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80">
+                  Learn More
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
               </motion.div>
             ))}
@@ -136,58 +256,63 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-primary text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800"
-                alt="Creative digital team"
-                className="rounded-3xl shadow-2xl h-[420px] w-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute -bottom-8 -right-8 bg-gold p-8 rounded-3xl shadow-xl hidden md:block">
-                <p className="text-4xl font-serif font-bold mb-1">5+</p>
-                <p className="text-sm font-bold uppercase tracking-widest">Years of Craft</p>
+      <section className="bg-dark py-24 text-white">
+        <div className="section-shell">
+          <div className="mx-auto mb-14 max-w-2xl text-center">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">Why choose TechKing</p>
+            <h2 className="mt-4 text-4xl font-bold sm:text-5xl">Built for clarity, trust, and growth.</h2>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {reasons.map((item, idx) => (
+              <div key={idx} className="rounded-[28px] border border-white/10 bg-white/5 p-6 shadow-lg shadow-dark/10">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-gold">
+                  {item.icon}
+                </div>
+                <h3 className="mt-6 text-xl font-bold">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/70">{item.desc}</p>
               </div>
-            </div>
-            <div className="space-y-8">
-              <h2 className="text-4xl md:text-5xl font-serif font-bold leading-tight">Why businesses choose TechKing Bingo</h2>
-              <div className="space-y-6">
-                {reasons.map((item, idx) => (
-                  <div key={idx} className="flex gap-4">
-                    <div className="bg-white/10 p-3 rounded-xl h-fit">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-bold mb-2">{item.title}</h4>
-                      <p className="text-white/70 leading-relaxed">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-beige/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif font-bold mb-4">Client feedback</h2>
-            <div className="flex justify-center gap-1">
-              {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-gold text-gold" />)}
+      <section className="bg-white py-24">
+        <div className="section-shell">
+          <div className="mb-14 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">Featured work</p>
+              <h2 className="mt-4 text-4xl font-bold text-dark sm:text-5xl">Projects built for modern brands.</h2>
             </div>
+            <Link to="/services" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80">
+              View Services
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((t, idx) => (
-              <div key={idx} className="bg-white p-8 rounded-3xl shadow-sm border border-primary/5">
-                <p className="text-dark/70 italic mb-6">"{t.quote}"</p>
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">
-                    {t.name[0]}
+
+          <div className="grid gap-8 lg:grid-cols-3">
+            {projects.map((project, idx) => (
+              <div key={idx} className="group overflow-hidden rounded-[28px] border border-dark/5 bg-beige/30 shadow-[0_18px_40px_rgba(17,17,17,0.04)] transition hover:-translate-y-1 hover:shadow-[0_22px_45px_rgba(17,17,17,0.08)]">
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="h-60 w-full object-cover transition duration-500 group-hover:scale-105"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="p-6">
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="rounded-full bg-white px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-dark/50 ring-1 ring-dark/5">
+                        {tag}
+                      </span>
+                    ))}
                   </div>
-                  <span className="font-bold text-dark">{t.name}</span>
+                  <h3 className="mt-5 text-2xl font-bold text-dark">{project.name}</h3>
+                  <p className="mt-3 text-base leading-relaxed text-dark/65">{project.description}</p>
+                  <Link to="/contact" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80">
+                    View Project
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </div>
               </div>
             ))}
@@ -195,57 +320,103 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-3xl -mr-32 -mt-32" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -ml-32 -mb-32" />
+      <section className="bg-surface py-24">
+        <div className="section-shell">
+          <div className="mx-auto mb-14 max-w-2xl text-center">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">How we work</p>
+            <h2 className="mt-4 text-4xl font-bold text-dark sm:text-5xl">Simple, clear, and collaborative.</h2>
+          </div>
 
-        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8">Ready to level up your online presence?</h2>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link
-              to="/booking"
-              className="bg-primary text-white px-10 py-5 rounded-full font-bold text-xl hover:bg-primary/90 transition-all shadow-2xl shadow-primary/30"
-            >
-              Book a Discovery Call
-            </Link>
-            <Link
-              to="/services"
-              className="bg-dark text-white px-10 py-5 rounded-full font-bold text-xl hover:bg-dark/90 transition-all"
-            >
-              View Services
-            </Link>
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {processSteps.map((step) => (
+              <div key={step.number} className="relative rounded-[28px] border border-dark/5 bg-white p-6 shadow-[0_12px_32px_rgba(17,17,17,0.04)]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-sm font-black text-white">
+                  {step.number}
+                </div>
+                <h3 className="mt-6 text-2xl font-bold text-dark">{step.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-dark/65">{step.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-beige/30 border-t border-primary/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="flex items-center gap-4">
-              <div className="bg-white p-4 rounded-2xl shadow-sm">
-                <Phone className="w-6 h-6 text-primary" />
+      <section className="bg-white py-24">
+        <div className="section-shell">
+          <div className="mx-auto mb-14 max-w-2xl text-center">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">Client feedback</p>
+            <h2 className="mt-4 text-4xl font-bold text-dark sm:text-5xl">Professional, trustworthy, and easy to work with.</h2>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            {placeholderTestimonials.map((item, idx) => (
+              <div key={idx} className="rounded-[28px] border border-dark/5 bg-beige/30 p-7 shadow-[0_12px_30px_rgba(17,17,17,0.04)]">
+                <div className="mb-5 flex gap-1 text-gold">
+                  {[...Array(5)].map((_, starIdx) => <Star key={starIdx} className="h-4 w-4 fill-current" />)}
+                </div>
+                <p className="text-base leading-relaxed text-dark/70">“{item.quote}”</p>
+                <p className="mt-6 text-xs font-bold uppercase tracking-[0.2em] text-dark/45">{item.note}</p>
               </div>
-              <div>
-                <p className="text-xs font-bold text-dark/40 uppercase tracking-widest">Call Us</p>
-                <p className="text-lg font-bold text-dark">+233 59 299 8425</p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-primary py-20 text-white">
+        <div className="section-shell">
+          <div className="rounded-[32px] border border-white/10 bg-gradient-to-r from-primary to-[#b71d1d] p-8 shadow-[0_20px_60px_rgba(215,40,40,0.3)] md:p-12">
+            <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-2xl">
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-white/70">Let’s build something great</p>
+                <h2 className="mt-4 text-4xl font-bold sm:text-5xl">Have a project in mind?</h2>
+                <p className="mt-4 text-lg leading-relaxed text-white/80">
+                  Tell us what you need and we’ll help shape the right digital solution for your business.
+                </p>
+              </div>
+              <div className="flex flex-col gap-4 sm:flex-row">
+                <Link to="/booking" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-4 text-base font-semibold text-primary shadow-lg transition hover:-translate-y-0.5">
+                  Get Started
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-transparent px-7 py-4 text-base font-semibold text-white transition hover:bg-white/10">
+                  Contact Us
+                </Link>
               </div>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="bg-white p-4 rounded-2xl shadow-sm">
-                <MessageCircle className="w-6 h-6 text-emerald-500" />
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-dark/5 bg-beige/30 py-16">
+        <div className="section-shell">
+          <div className="grid gap-8 md:grid-cols-3">
+            <div className="flex items-center gap-4 rounded-[24px] bg-white p-4 shadow-sm ring-1 ring-dark/5">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                <Phone className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-xs font-bold text-dark/40 uppercase tracking-widest">WhatsApp</p>
-                <p className="text-lg font-bold text-dark">+233 59 299 8425</p>
+                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-dark/40">Call us</p>
+                <p className="text-base font-semibold text-dark">+233 59 299 8425</p>
               </div>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="bg-white p-4 rounded-2xl shadow-sm">
-                <MapPin className="w-6 h-6 text-gold" />
+
+            <div className="flex items-center gap-4 rounded-[24px] bg-white p-4 shadow-sm ring-1 ring-dark/5">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-600">
+                <MessageCircle className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-xs font-bold text-dark/40 uppercase tracking-widest">Location</p>
-                <p className="text-lg font-bold text-dark">Accra, Ghana</p>
+                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-dark/40">WhatsApp</p>
+                <p className="text-base font-semibold text-dark">+233 59 299 8425</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 rounded-[24px] bg-white p-4 shadow-sm ring-1 ring-dark/5">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold/15 text-gold">
+                <Calendar className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-dark/40">Location</p>
+                <p className="text-base font-semibold text-dark">Accra, Ghana</p>
               </div>
             </div>
           </div>

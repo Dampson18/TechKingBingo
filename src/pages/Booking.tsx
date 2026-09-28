@@ -20,6 +20,12 @@ const timeSlots = [
   "05:00 PM", "06:00 PM", "07:00 PM", "08:00 PM"
 ];
 
+const bookingBenefits = [
+  "We listen to your business goals before recommending a solution.",
+  "We propose the right package based on your stage and needs.",
+  "You get clear next steps without the pressure of a hard-sell pitch.",
+];
+
 export default function Booking() {
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -84,10 +90,19 @@ export default function Booking() {
 
   return (
     <div className="bg-beige/20 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-dark mb-4">Book a discovery call</h1>
-          <p className="text-dark/60">Choose the service you need and tell us the best time to speak.</p>
+      <div className="mx-auto max-w-5xl">
+        <div className="mb-12 text-center">
+          <h1 className="mb-4 font-serif text-4xl font-bold text-dark md:text-5xl">Book a discovery call</h1>
+          <p className="mx-auto max-w-2xl text-dark/60">Choose the service you need and tell us the best time to speak. We’ll help you decide the right next step without pressure.</p>
+        </div>
+
+        <div className="mb-10 grid gap-4 md:grid-cols-3">
+          {bookingBenefits.map((item) => (
+            <div key={item} className="rounded-[24px] border border-primary/10 bg-white p-5 text-sm leading-relaxed text-dark/70 shadow-sm">
+              <CheckCircle className="mb-3 h-5 w-5 text-primary" />
+              {item}
+            </div>
+          ))}
         </div>
 
         <div className="flex justify-between mb-12 relative max-w-md mx-auto">

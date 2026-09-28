@@ -1,6 +1,21 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import { Clock, Loader2, MapPin, MessageCircle, Phone, Send, CheckCircle } from "lucide-react";
+import { Clock, Loader2, MapPin, MessageCircle, Phone, Send, CheckCircle, ArrowRight } from "lucide-react";
+
+const helpAreas = [
+  "Website design & redesign",
+  "Branding and visual direction",
+  "Landing pages and lead generation",
+  "Business growth strategy",
+  "E-commerce & online store setup",
+  "Ongoing website support",
+];
+
+const responseSteps = [
+  { title: "Tell us your goal", desc: "Share your business type, objective, and the current problem you want to solve." },
+  { title: "Get a tailored plan", desc: "We suggest the right service, scope, and timeframe based on your goals." },
+  { title: "Move into build mode", desc: "Once approved, we design, build, and launch with clear communication all the way through." },
+];
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
@@ -42,6 +57,31 @@ export default function Contact() {
       </section>
 
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="rounded-[32px] border border-primary/10 bg-gradient-to-br from-primary/5 via-white to-amber-100/40 p-8 md:p-10">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">How we can help</p>
+            <h2 className="mt-4 font-serif text-4xl font-bold text-dark">Need a better website, stronger brand, or clearer digital strategy?</h2>
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              {helpAreas.map((area) => (
+                <div key={area} className="flex items-center gap-3 rounded-2xl bg-white p-3 text-sm font-medium text-dark/75 shadow-sm ring-1 ring-dark/5">
+                  <CheckCircle className="h-4 w-4 text-primary" />
+                  {area}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-[32px] border border-dark/5 bg-dark p-8 text-white md:p-10">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">Fast response</p>
+            <h3 className="mt-4 font-serif text-3xl font-bold text-white">Quick answers, clear direction, and no generic sales talk.</h3>
+            <p className="mt-4 text-base leading-relaxed text-white/75">We are happy to talk through your needs, recommend the right approach, and help you decide the next best move for your business.</p>
+            <a href="https://wa.me/233592998425" target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-white hover:bg-primary/90">
+              Message on WhatsApp
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div className="space-y-12">
             <div>
@@ -145,6 +185,25 @@ export default function Contact() {
                 </button>
               </form>
             )}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-surface py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">How it works</p>
+            <h2 className="mt-4 font-serif text-4xl font-bold text-dark">A straightforward process from first idea to launch.</h2>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {responseSteps.map((step, idx) => (
+              <div key={step.title} className="rounded-[28px] border border-primary/10 bg-white p-6 shadow-sm">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-sm font-black text-primary">0{idx + 1}</div>
+                <h3 className="mt-6 text-xl font-bold text-dark">{step.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-dark/70">{step.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

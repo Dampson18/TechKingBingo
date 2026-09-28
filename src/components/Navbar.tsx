@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Calendar } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/src/lib/utils";
@@ -17,47 +17,52 @@ export default function Navbar() {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-primary/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20 items-center">
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-sm font-black text-white shadow-lg shadow-primary/20">
-              TK
-            </div>
-            <span className="font-serif text-xl font-bold text-primary tracking-tight">
-              TechKing Bingo
-            </span>
-          </Link>
-
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary",
-                  location.pathname === link.path ? "text-primary font-bold" : "text-dark/70"
-                )}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Link
-              to="/booking"
-              className="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 flex items-center gap-2"
-            >
-              <Calendar className="w-4 h-4" />
-              Book a Call
+    <nav className="fixed top-0 left-0 right-0 z-50">
+      <div className="section-shell pt-4">
+        <div className="glass-panel rounded-full border border-primary/10 shadow-[0_12px_40px_rgba(23,24,29,0.08)]">
+          <div className="flex h-20 items-center justify-between px-4 sm:px-6">
+            <Link to="/" className="flex items-center gap-3 group">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-sm font-black text-white shadow-lg shadow-primary/20 ring-4 ring-primary/10">
+                TK
+              </div>
+              <span className="font-serif text-xl font-bold text-dark tracking-tight">
+                TechKing Bingo
+              </span>
             </Link>
-          </div>
 
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-primary p-2 focus:outline-none"
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            <div className="hidden items-center gap-8 md:flex">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={cn(
+                    "text-sm font-medium transition-all",
+                    location.pathname === link.path
+                      ? "text-primary font-bold"
+                      : "text-dark/65 hover:text-primary"
+                  )}
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <Link
+                to="/booking"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 hover:bg-primary/90"
+              >
+                Get Started
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+
+            <div className="md:hidden">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/10 bg-white text-primary shadow-sm"
+                aria-label="Toggle menu"
+              >
+                {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -68,31 +73,35 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-primary/10 overflow-hidden"
+            transition={{ duration: 0.2 }}
+            className="md:hidden"
           >
-            <div className="px-4 pt-2 pb-6 space-y-2">
-              {navLinks.map((link) => (
+            <div className="section-shell pt-2 pb-4">
+              <div className="glass-panel rounded-3xl border border-primary/10 p-3 shadow-xl">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className={cn(
+                      "block rounded-xl px-3 py-3 text-base font-medium",
+                      location.pathname === link.path
+                        ? "bg-primary/10 text-primary"
+                        : "text-dark/70 hover:bg-beige/80"
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
                 <Link
-                  key={link.path}
-                  to={link.path}
+                  to="/booking"
                   onClick={() => setIsOpen(false)}
-                  className={cn(
-                    "block px-3 py-3 rounded-lg text-base font-medium transition-colors",
-                    location.pathname === link.path
-                      ? "bg-primary/10 text-primary"
-                      : "text-dark/70 hover:bg-beige/50"
-                  )}
+                  className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-base font-semibold text-white"
                 >
-                  {link.name}
+                  Get Started
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
-              ))}
-              <Link
-                to="/booking"
-                onClick={() => setIsOpen(false)}
-                className="block w-full bg-primary text-white text-center px-6 py-3 rounded-lg text-base font-semibold mt-4"
-              >
-                Book a Call
-              </Link>
+              </div>
             </div>
           </motion.div>
         )}

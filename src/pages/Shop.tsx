@@ -14,6 +14,15 @@ const products = [
   { id: "8", name: "Maintenance Plan", price: 260, desc: "Ongoing support, fixes, and updates to keep your site fast and reliable.", category: "Support" },
 ];
 
+const packageHighlights = [
+  "Modern business-first design",
+  "Mobile responsive layouts",
+  "Clear conversion-focused structure",
+  "Brand guidance and messaging support",
+  "Launch-ready design and delivery",
+  "Optional support after launch",
+];
+
 export default function Shop() {
   const [cart, setCart] = useState<{ product: any; quantity: number }[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -143,6 +152,33 @@ export default function Shop() {
               </div>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="rounded-[32px] border border-primary/10 bg-white p-8 shadow-sm">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">What’s included</p>
+            <h2 className="mt-4 font-serif text-4xl font-bold text-dark">Everything you need to look more professional online.</h2>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {packageHighlights.map((item) => (
+                <div key={item} className="flex items-start gap-3 rounded-2xl bg-beige/40 p-4 text-sm text-dark/75">
+                  <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-[32px] bg-gradient-to-br from-dark via-dark to-primary p-8 text-white shadow-xl">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">Why clients choose packages</p>
+            <h3 className="mt-4 font-serif text-3xl font-bold text-white">Clear pricing, transparent process, and useful digital outcomes.</h3>
+            <ul className="mt-8 space-y-4 text-white/75">
+              <li className="flex items-center gap-3"><Truck className="h-4 w-4 text-gold" /> Fast setup and guided delivery</li>
+              <li className="flex items-center gap-3"><CreditCard className="h-4 w-4 text-gold" /> Simple package choices for different business stages</li>
+              <li className="flex items-center gap-3"><Sparkles className="h-4 w-4 text-gold" /> Premium presentation without overcomplication</li>
+            </ul>
+          </div>
         </div>
       </section>
 

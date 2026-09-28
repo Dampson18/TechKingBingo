@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, Code2, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, Code2, Sparkles, Star, BadgeCheck, Rocket, LayoutTemplate } from "lucide-react";
 
 const pricingPlans = [
   {
@@ -48,6 +48,22 @@ const otherServices = [
   { name: "Priority Maintenance", detail: "Premium support", price: "GH₵ 1,000–2,500/month", description: "Everything in basic maintenance, plus priority support, performance optimization, and advanced monitoring." },
 ];
 
+const includedPerPlan = [
+  "Custom layout and UX direction",
+  "Mobile-first responsive design",
+  "Optimized performance and page speed",
+  "Contact forms and conversion touchpoints",
+  "Basic SEO foundations and metadata",
+  "Launch support and delivery guidance",
+];
+
+const faqs = [
+  { q: "How long does a project take?", a: "Most small business sites take between 3 days and 3 weeks depending on the scope, content readiness, and custom features required." },
+  { q: "Can I get a redesign instead of a new site?", a: "Yes. We regularly redesign and modernize existing websites to improve visuals, performance, lead generation, and clarity." },
+  { q: "Do you support businesses outside Ghana?", a: "Yes. We work with clients locally and remotely, and can support businesses that need a strong online presence anywhere." },
+  { q: "Do you offer ongoing website support?", a: "Yes. We provide maintenance and support packages for updates, content changes, bug fixes, and technical upkeep after launch." },
+];
+
 export default function Services() {
   return (
     <div className="bg-beige/20 min-h-screen pb-24">
@@ -72,6 +88,23 @@ export default function Services() {
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
             Your business, built for the web. From a single landing page to a full online store — every project scoped, priced, and delivered on a clear timeline.
           </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-4">
+          {[
+            { icon: <BadgeCheck className="h-6 w-6 text-primary" />, title: "Business-first design", text: "Every page is structured around your offer, customer journey, and conversion goals." },
+            { icon: <LayoutTemplate className="h-6 w-6 text-primary" />, title: "Modern UI systems", text: "We use strong visual hierarchy, clean layouts, and premium design patterns that feel credible." },
+            { icon: <Rocket className="h-6 w-6 text-primary" />, title: "Launch-ready build", text: "Your website is designed to look polished and perform smoothly across screens and devices." },
+            { icon: <Star className="h-6 w-6 text-primary" />, title: "Support after launch", text: "We help you stay confident with updates, improvements, and guidance after your site goes live." },
+          ].map((item) => (
+            <div key={item.title} className="rounded-[28px] border border-primary/10 bg-white p-6 shadow-sm">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">{item.icon}</div>
+              <h3 className="mt-5 text-xl font-bold text-dark">{item.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-dark/65">{item.text}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -118,6 +151,38 @@ export default function Services() {
         </div>
       </section>
 
+      <section className="bg-white py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">What every project gets</p>
+            <h2 className="mt-4 font-serif text-4xl font-bold text-dark">A project experience designed for clarity and confidence.</h2>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-2">
+            <div className="rounded-[32px] border border-primary/10 bg-primary/5 p-8">
+              <ul className="space-y-4">
+                {includedPerPlan.map((feature) => (
+                  <li key={feature} className="flex items-start gap-3 text-base text-dark/75">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-[32px] border border-dark/5 bg-dark p-8 text-white">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">Best for</p>
+              <h3 className="mt-4 font-serif text-3xl font-bold text-white">Businesses that want to look credible and convert better.</h3>
+              <p className="mt-5 text-base leading-relaxed text-white/75">Whether you are building from scratch, refreshing an old site, or improving your digital presence, our packages are designed to match your stage and goals.</p>
+              <Link to="/booking" className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-primary">
+                Book a discovery call
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 mb-12">
@@ -159,6 +224,24 @@ export default function Services() {
               Let's build your website
               <ArrowRight className="w-4 h-4" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-surface py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">FAQ</p>
+            <h2 className="mt-4 font-serif text-4xl font-bold text-dark">Questions clients ask before starting.</h2>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            {faqs.map((item) => (
+              <div key={item.q} className="rounded-[28px] border border-primary/10 bg-white p-6 shadow-sm">
+                <h3 className="text-lg font-bold text-dark">{item.q}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-dark/70">{item.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
