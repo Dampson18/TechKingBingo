@@ -1,15 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Leaf, ShoppingBag, Calendar } from "lucide-react";
+import { Menu, X, Calendar } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/src/lib/utils";
 
-
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "Services", path: "/services" },
-  { name: "Booking", path: "/booking" },
-  { name: "Shop", path: "/shop" },
+  { name: "Packages", path: "/shop" },
   { name: "About", path: "/about" },
   { name: "Contact", path: "/contact" },
 ];
@@ -22,19 +20,15 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-primary/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
-          <Link to="/" className="flex items-center gap-2 group">
-<img 
-  src="/images/logo.png"
-  alt="GHMC Logo"
-  className="h-12 md:h-16 w-auto object-contain"
-/>
-
-<span className="font-serif text-xl font-bold text-primary tracking-tight">
-  GHMC
-</span>
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-sm font-black text-white shadow-lg shadow-primary/20">
+              TK
+            </div>
+            <span className="font-serif text-xl font-bold text-primary tracking-tight">
+              TechKing Bingo
+            </span>
           </Link>
 
-          {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
@@ -53,11 +47,10 @@ export default function Navbar() {
               className="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 flex items-center gap-2"
             >
               <Calendar className="w-4 h-4" />
-              Book Now
+              Book a Call
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -69,7 +62,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Nav */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -99,7 +91,7 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className="block w-full bg-primary text-white text-center px-6 py-3 rounded-lg text-base font-semibold mt-4"
               >
-                Book Appointment
+                Book a Call
               </Link>
             </div>
           </motion.div>

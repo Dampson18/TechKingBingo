@@ -1,72 +1,90 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-import { Leaf, Sparkles, Clock, CheckCircle2, ShoppingBag, Calendar } from "lucide-react";
+import { ArrowRight, CheckCircle2, Code2, Sparkles } from "lucide-react";
 
-const herbalTreatments = [
-  { name: "Type II Diabetes", desc: "Natural management of blood sugar levels using traditional herbs.", benefits: ["Regulates insulin", "Improves metabolism", "Detoxifies body"] },
-  { name: "Kidney Stones", desc: "Effective herbal solutions to dissolve and prevent kidney stones.", benefits: ["Pain relief", "Natural dissolution", "Kidney health support"] },
-  { name: "Obesity", desc: "Weight management through herbal metabolism boosters.", benefits: ["Fat burning", "Appetite control", "Energy boost"] },
-  { name: "Hernia", desc: "Traditional treatments to manage and alleviate hernia symptoms.", benefits: ["Reduces inflammation", "Strengthens tissues", "Pain management"] },
-  { name: "Typhoid & Malaria", desc: "Potent herbal blends to treat and boost immunity against fever.", benefits: ["Rapid recovery", "Immune support", "Natural fever reducer"] },
-  { name: "Sexual Weakness", desc: "Natural vitality boosters for improved performance and energy.", benefits: ["Increased stamina", "Hormonal balance", "Improved circulation"] },
-  { name: "Prostate Enlargement", desc: "Herbal support for prostate health and urinary function.", benefits: ["Reduces swelling", "Improves flow", "Anti-inflammatory"] },
-  { name: "Yeast Infection", desc: "Natural antifungal treatments for long-term relief.", benefits: ["Restores balance", "Antifungal properties", "Prevents recurrence"] },
+const pricingPlans = [
+  {
+    name: "Starter / Landing Page",
+    price: "GH₵ 1,500–3,000",
+    detail: "For freelancers & micro-startups running a single campaign",
+    features: ["1–3 page site", "contact form", "mobile responsiveness", "social media links", "SSL/TLS setup"],
+    timeline: "3–7 days",
+  },
+  {
+    name: "Standard Business Website",
+    price: "GH₵ 3,000–5,500",
+    detail: "For growing SMEs & local businesses — law firms, clinics, and more",
+    features: ["5–15 pages", "content management system", "basic SEO setup", "Google Maps integration", "professional email setup"],
+    timeline: "1–3 weeks",
+  },
+  {
+    name: "E-commerce Platform",
+    price: "GH₵ 5,000–10,000",
+    detail: "For retailers & online shops",
+    features: ["Product catalogue", "shopping cart", "inventory management", "local payment gateway integration", "SSL/TLS setup"],
+    timeline: "2–5 weeks",
+  },
+  {
+    name: "Website Redesign",
+    price: "GH₵ 2,500–5,000",
+    detail: "For any client with an existing website",
+    features: ["Updated design", "SEO improvements", "modern UI/UX", "speed optimisation", "content migration"],
+    timeline: "1–3 weeks",
+  },
+  {
+    name: "Custom Web Solutions",
+    price: "Quoted per project",
+    detail: "Tailored web applications, client portals, booking systems, and enterprise solutions.",
+    features: ["Custom build", "project planning", "scoped delivery", "integration-ready architecture"],
+    timeline: "Custom",
+  },
 ];
 
-const spaServices = [
-  { name: "Hot Stone Massage", desc: "Heated stones placed on key points to melt away deep muscle tension.", duration: "60/90 min", benefits: ["Deep relaxation", "Improved circulation", "Stress relief"] },
-  { name: "Thai Massage", desc: "Traditional stretching and pressure point therapy for flexibility.", duration: "60/90 min", benefits: ["Increased flexibility", "Energy flow", "Muscle relief"] },
-  { name: "Deep Tissue Massage", desc: "Intense pressure to release chronic muscle knots and tension.", duration: "60/90 min", benefits: ["Chronic pain relief", "Posture correction", "Muscle recovery"] },
-  { name: "Swedish Massage", desc: "Gentle, long strokes to promote overall relaxation and circulation.", duration: "60 min", benefits: ["Stress reduction", "Better sleep", "Muscle relaxation"] },
-  { name: "Chiropractic Therapy", desc: "Professional spinal adjustments for better alignment and health.", duration: "45 min", benefits: ["Spinal health", "Nerve relief", "Improved mobility"] },
-  { name: "Couple Massage", desc: "Enjoy a relaxing massage experience together in our private suite.", duration: "60/90 min", benefits: ["Shared relaxation", "Bonding time", "Full body therapy"] },
+const otherServices = [
+  { name: "Ongoing support", detail: "New Website Clients", price: "Free", description: "Free consultation, 30 days post-launch support, basic SEO setup, SSL/TLS certificate assistance, basic training on managing your site." },
+  { name: "Domain Hosting & Assistance", detail: "Domain and hosting management", price: "GH₵ 50/month", description: "Domain and hosting management, renewals, DNS configuration, SSL certificate support, technical assistance." },
+  { name: "Hourly Development", detail: "Website updates & consulting", price: "GH₵ 100–200/hr", description: "Website updates, troubleshooting, feature additions, consulting." },
+  { name: "Website Maintenance", detail: "Ongoing site care", price: "GH₵ 200–500/month", description: "Backups, updates, security monitoring, bug fixes, content updates." },
+  { name: "Priority Maintenance", detail: "Premium support", price: "GH₵ 1,000–2,500/month", description: "Everything in basic maintenance, plus priority support, performance optimization, and advanced monitoring." },
 ];
 
 export default function Services() {
   return (
     <div className="bg-beige/20 min-h-screen pb-24">
-      {/* Header */}
       <section className="relative text-white py-24 overflow-hidden">
-  {/* Background Image */}
-  <img
-    src="/images/services-bg.jpg"
-    alt="Services Background"
-    className="absolute inset-0 w-full h-full object-cover"
-  />
+        <img
+          src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1800"
+          alt="TechKing Bingo services"
+          className="absolute inset-0 w-full h-full object-cover brightness-75"
+        />
 
-  {/* Dark Overlay */}
-  <div className="absolute inset-0 bg-primary/70" />
+        <div className="absolute inset-0 bg-primary/75" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -mr-48 -mt-48 blur-3xl" />
 
-  {/* Existing Blur Effect */}
-  <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -mr-48 -mt-48 blur-3xl" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-5xl md:text-6xl font-serif font-bold mb-6"
+          >
+            TechKing Bingo Web Development Info
+          </motion.h1>
+          <p className="text-xl text-white/80 max-w-3xl mx-auto">
+            Your business, built for the web. From a single landing page to a full online store — every project scoped, priced, and delivered on a clear timeline.
+          </p>
+        </div>
+      </section>
 
-  {/* Content */}
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-    <motion.h1 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="text-5xl md:text-6xl font-serif font-bold mb-6"
-    >
-      Our Healing Services
-    </motion.h1>
-
-    <p className="text-xl text-white/80 max-w-2xl mx-auto">
-      Explore our comprehensive range of natural herbal treatments and professional spa therapies.
-    </p>
-  </div>
-</section>
-
-      {/* Herbal Treatments */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-4 mb-12">
           <div className="bg-primary/10 p-3 rounded-2xl">
-            <Leaf className="text-primary w-8 h-8" />
+            <Code2 className="text-primary w-8 h-8" />
           </div>
-          <h2 className="text-4xl font-serif font-bold">Herbal Treatments</h2>
+          <h2 className="text-4xl font-serif font-bold">Pricing plan</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {herbalTreatments.map((item, idx) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+          {pricingPlans.map((plan, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
@@ -75,73 +93,72 @@ export default function Services() {
               viewport={{ once: true }}
               className="bg-white p-8 rounded-3xl shadow-sm border border-primary/5 hover:border-primary/20 transition-all group flex flex-col h-full"
             >
-              <h3 className="text-xl font-serif font-bold mb-4 group-hover:text-primary transition-colors">{item.name}</h3>
-              <p className="text-dark/60 text-sm mb-6 flex-grow leading-relaxed">{item.desc}</p>
-              <div className="space-y-2 mb-8">
-                {item.benefits.map((benefit, i) => (
-                  <div key={i} className="flex items-center gap-2 text-xs text-dark/80">
-                    <CheckCircle2 className="w-3 h-3 text-primary" />
-                    <span>{benefit}</span>
+              <div className="mb-6">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">{plan.name}</p>
+                <h3 className="mt-3 text-3xl font-serif font-bold text-dark">{plan.price}</h3>
+                <p className="mt-3 text-sm text-dark/60">{plan.detail}</p>
+              </div>
+
+              <div className="space-y-3 mb-6 flex-grow">
+                {plan.features.map((feature, i) => (
+                  <div key={i} className="flex items-start gap-2 text-sm text-dark/80">
+                    <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                    <span>{feature}</span>
                   </div>
                 ))}
               </div>
-              <Link
-                to="/shop"
-                className="w-full bg-beige text-primary py-3 rounded-xl text-sm font-bold hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2"
-              >
-                <ShoppingBag className="w-4 h-4" />
-                Order Treatment
-              </Link>
+
+              <div className="border-t border-primary/10 pt-4 mt-auto">
+                <span className="inline-flex rounded-full bg-primary/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
+                  {plan.timeline}
+                </span>
+              </div>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* Spa Services */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 mb-12">
             <div className="bg-gold/10 p-3 rounded-2xl">
               <Sparkles className="text-gold w-8 h-8" />
             </div>
-            <h2 className="text-4xl font-serif font-bold">Spa Services</h2>
+            <h2 className="text-4xl font-serif font-bold">Other services</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {spaServices.map((service, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+            {otherServices.map((service, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.1 }}
+                transition={{ delay: idx * 0.06 }}
                 viewport={{ once: true }}
                 className="bg-beige/20 p-8 rounded-3xl border border-gold/10 hover:border-gold/30 transition-all group flex flex-col h-full"
               >
-                <div className="flex justify-between items-start mb-6">
-                  <h3 className="text-2xl font-serif font-bold group-hover:text-gold transition-colors">{service.name}</h3>
-                  <div className="flex items-center gap-1 text-xs font-bold text-gold bg-gold/10 px-3 py-1 rounded-full">
-                    <Clock className="w-3 h-3" />
-                    {service.duration}
-                  </div>
+                <div className="mb-4">
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold">{service.name}</p>
+                  <h3 className="mt-2 text-2xl font-serif font-bold text-dark">{service.price}</h3>
                 </div>
-                <p className="text-dark/60 text-sm mb-6 flex-grow leading-relaxed">{service.desc}</p>
-                <div className="space-y-2 mb-8">
-                  {service.benefits.map((benefit, i) => (
-                    <div key={i} className="flex items-center gap-2 text-xs text-dark/80">
-                      <CheckCircle2 className="w-3 h-3 text-gold" />
-                      <span>{benefit}</span>
-                    </div>
-                  ))}
-                </div>
-                <Link
-                  to="/booking"
-                  className="w-full bg-gold text-white py-4 rounded-xl text-sm font-bold hover:bg-gold/90 transition-all flex items-center justify-center gap-2 shadow-lg shadow-gold/20"
-                >
-                  <Calendar className="w-4 h-4" />
-                  Book Now
-                </Link>
+                <p className="text-sm font-semibold text-dark/70 mb-3">{service.detail}</p>
+                <p className="text-sm text-dark/60 leading-relaxed mb-6 flex-grow">{service.description}</p>
               </motion.div>
             ))}
+          </div>
+
+          <div className="mt-12 rounded-3xl bg-primary text-white p-8 md:p-10 text-center">
+            <h3 className="text-3xl font-serif font-bold mb-4">Need something larger?</h3>
+            <p className="max-w-3xl mx-auto text-white/80 leading-relaxed">
+              Custom enterprise and multi-dashboard platforms are quoted individually — get in touch to scope your project.
+            </p>
+            <Link
+              to="/contact"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-primary transition hover:bg-beige"
+            >
+              Let's build your website
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>

@@ -44,8 +44,8 @@ export default function Admin() {
               <ShieldCheck className="text-white w-8 h-8" />
             </div>
             <div>
-              <h1 className="text-3xl font-serif font-bold text-dark">Admin Dashboard</h1>
-              <p className="text-dark/60 text-sm">Manage your wellness center operations.</p>
+              <h1 className="text-3xl font-serif font-bold text-dark">Agency Dashboard</h1>
+              <p className="text-dark/60 text-sm">Manage active client requests and digital service orders.</p>
             </div>
           </div>
           
@@ -172,12 +172,12 @@ export default function Admin() {
                               </span>
                               <span className="font-medium">{item.product.name}</span>
                             </div>
-                            <span className="font-bold">GH₵ {item.product.price * item.quantity}</span>
+                            <span className="font-bold">GHS {item.product.price * item.quantity}</span>
                           </div>
                         ))}
                         <div className="pt-4 border-t border-primary/10 flex justify-between items-center">
                           <span className="font-bold text-dark">Total Amount</span>
-                          <span className="text-xl font-bold text-primary">GH₵ {order.total}</span>
+                          <span className="text-xl font-bold text-primary">GHS {order.total}</span>
                         </div>
                       </div>
                     </div>

@@ -1,82 +1,74 @@
 import React from "react";
 import { motion } from "motion/react";
-import { Leaf, Heart, ShieldCheck, Target, Users, Award } from "lucide-react";
+import { Award, Globe, Heart, ShieldCheck, Target, Users } from "lucide-react";
 
 export default function About() {
   return (
     <div className="bg-white min-h-screen pb-24">
-      {/* Hero */}
-     <section className="relative text-dark py-24 overflow-hidden border-b border-primary/5">
-  {/* Background Image */}
-  <img
-    src="/images/about-bg.jpg" // Put your About page bg in public/images/
-    alt="About GHMC Background"
-    className="absolute inset-0 w-full h-full object-cover"
-  />
+      <section className="relative text-dark py-24 overflow-hidden border-b border-primary/5">
+        <img
+          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1800"
+          alt="About TechKing Bingo"
+          className="absolute inset-0 w-full h-full object-cover brightness-90"
+        />
 
-  {/* Overlay for readability */}
-  <div className="absolute inset-0 bg-beige/60" />
+        <div className="absolute inset-0 bg-beige/70" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full -mr-48 -mt-48 blur-3xl" />
 
-  {/* Optional Blur/Decorative Shape */}
-  <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full -mr-48 -mt-48 blur-3xl" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-5xl md:text-6xl font-serif font-bold mb-6 text-dark"
+          >
+            About TechKing Bingo
+          </motion.h1>
+          <p className="text-xl text-dark/80 max-w-2xl mx-auto leading-relaxed">
+            We are a digital-first agency helping businesses build a strong online presence and grow with confidence.
+          </p>
+        </div>
+      </section>
 
-  {/* Content */}
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-    <motion.h1 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="text-5xl md:text-6xl font-serif font-bold mb-6 text-dark"
-    >
-      About GHMC
-    </motion.h1>
-    <p className="text-xl text-dark/80 max-w-2xl mx-auto leading-relaxed">
-      Rooted in tradition, powered by nature, and dedicated to your holistic wellness.
-    </p>
-  </div>
-</section>
-
-      {/* Content */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
           <div className="space-y-8">
-            <h2 className="text-4xl font-serif font-bold text-dark leading-tight">Our Story & Mission</h2>
+            <h2 className="text-4xl font-serif font-bold text-dark leading-tight">Our story & mission</h2>
             <p className="text-lg text-dark/70 leading-relaxed">
-              Gyenyamdi Herbal and Massage Center (GHMC) was founded with a single vision: to bridge the gap between ancient herbal wisdom and modern wellness practices. We believe that true healing comes from nature and the expert touch of professional therapy.
+              TechKing Bingo was founded to help businesses turn online visibility into real momentum. We believe a strong digital presence should do more than look good — it should build trust, create clarity, and generate results.
             </p>
             <div className="bg-primary/5 p-8 rounded-3xl border-l-4 border-primary italic text-primary font-medium">
-              "To provide natural healing solutions and professional wellness services for a healthier life."
+              “We turn ideas into digital experiences that help businesses grow, stand out, and win more attention.”
             </div>
             <p className="text-dark/70 leading-relaxed">
-              Located in the heart of Oyibi, we have become a trusted sanctuary for those seeking relief from chronic conditions and the stresses of modern life.
+              Whether it is a clean business website, a clear brand story, or a better online customer journey, we work closely with clients to create solutions that fit their goals.
             </p>
           </div>
           <div className="relative">
-            <img 
-              src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=800" 
-              alt="Wellness Center" 
-              className="rounded-3xl shadow-2xl"
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
+              alt="Digital agency team"
+              className="rounded-3xl shadow-2xl h-[480px] w-full object-cover"
               referrerPolicy="no-referrer"
             />
             <div className="absolute -top-10 -left-10 bg-white p-6 rounded-2xl shadow-xl border border-primary/5 hidden md:block">
               <div className="flex items-center gap-3">
                 <Award className="w-8 h-8 text-gold" />
-                <span className="font-bold text-dark">Certified Experts</span>
+                <span className="font-bold text-dark">Creative Excellence</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Values */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-serif font-bold mb-4">Our Core Values</h2>
-          <p className="text-dark/60">The principles that guide every treatment and interaction.</p>
+          <h2 className="text-4xl font-serif font-bold mb-4">Our core values</h2>
+          <p className="text-dark/60">The principles that guide every design decision and client relationship.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { title: "Natural Healing", desc: "We prioritize organic, herbal solutions that work with your body's natural rhythms.", icon: <Leaf className="w-8 h-8 text-primary" /> },
-            { title: "Professional Care", desc: "Our team consists of highly trained therapists dedicated to your comfort and recovery.", icon: <ShieldCheck className="w-8 h-8 text-gold" /> },
-            { title: "Customer Satisfaction", desc: "Your wellness journey is our priority. We listen, care, and deliver results.", icon: <Heart className="w-8 h-8 text-red-400" /> }
+            { title: "Clear Strategy", desc: "Every project starts with understanding your business, audience, and goals.", icon: <Globe className="w-8 h-8 text-primary" /> },
+            { title: "Quality Design", desc: "We build polished digital experiences that feel professional and practical.", icon: <ShieldCheck className="w-8 h-8 text-gold" /> },
+            { title: "Client Focus", desc: "Your growth, clarity, and satisfaction remain our top priority throughout the process.", icon: <Heart className="w-8 h-8 text-red-400" /> }
           ].map((value, idx) => (
             <motion.div
               key={idx}
@@ -93,15 +85,14 @@ export default function About() {
         </div>
       </section>
 
-      {/* Stats */}
       <section className="py-24 bg-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
             {[
-              { label: "Happy Clients", value: "5,000+", icon: <Users className="w-6 h-6 text-gold" /> },
-              { label: "Herbal Formulas", value: "50+", icon: <Leaf className="w-6 h-6 text-primary" /> },
-              { label: "Expert Therapists", value: "12", icon: <Award className="w-6 h-6 text-gold" /> },
-              { label: "Years Experience", value: "10+", icon: <Target className="w-6 h-6 text-primary" /> }
+              { label: "Happy Clients", value: "500+", icon: <Users className="w-6 h-6 text-gold" /> },
+              { label: "Web Projects", value: "120+", icon: <Globe className="w-6 h-6 text-primary" /> },
+              { label: "Creative Experts", value: "12", icon: <Award className="w-6 h-6 text-gold" /> },
+              { label: "Growth Focus", value: "100%", icon: <Target className="w-6 h-6 text-primary" /> }
             ].map((stat, idx) => (
               <div key={idx} className="space-y-4">
                 <div className="mx-auto w-12 h-12 bg-white/5 rounded-full flex items-center justify-center">
