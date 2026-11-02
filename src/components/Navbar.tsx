@@ -22,9 +22,11 @@ export default function Navbar() {
         <div className="glass-panel rounded-full border border-primary/10 shadow-[0_12px_40px_rgba(23,24,29,0.08)]">
           <div className="flex h-20 items-center justify-between px-4 sm:px-6">
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-sm font-black text-white shadow-lg shadow-primary/20 ring-4 ring-primary/10">
-                TK
-              </div>
+              <img
+                src="/images/logo.png"
+                alt="TechKing Bingo logo"
+                className="h-11 w-auto object-contain"
+              />
               <div className="leading-tight">
                 <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">The Elle Corporations</p>
                 <span className="font-serif text-lg font-bold text-dark tracking-tight sm:text-xl">

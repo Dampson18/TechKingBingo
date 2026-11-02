@@ -8,9 +8,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 pb-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-sm font-black text-white shadow-lg shadow-primary/20">
-                TK
-              </div>
+              <img
+                src="/images/logo.png"
+                alt="TechKing Bingo logo"
+                className="h-11 w-auto object-contain"
+              />
               <div className="leading-tight">
                 <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold">The Elle Corporations</p>
                 <span className="font-serif text-2xl font-bold tracking-tight text-white">
