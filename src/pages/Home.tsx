@@ -119,6 +119,12 @@ export default function Home() {
 
   return (
     <div className="overflow-hidden bg-white">
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+        <div className="absolute left-[-8rem] top-24 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute right-[-8rem] top-40 h-80 w-80 rounded-full bg-gold/10 blur-3xl" />
+        <div className="absolute bottom-24 left-1/3 h-72 w-72 rounded-full bg-indigo-200/30 blur-3xl" />
+      </div>
+
       {isVideoOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/65 p-4 backdrop-blur-sm">
           <div className="relative w-full max-w-4xl overflow-hidden rounded-[28px] border border-white/10 bg-dark shadow-2xl">
@@ -241,7 +247,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="py-24 bg-white">
+      <motion.section id="about" className="py-24 bg-white" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.7 }}>
         <div className="section-shell grid items-center gap-12 lg:grid-cols-2">
           <div className="space-y-8">
             <div>
@@ -271,9 +277,9 @@ export default function Home() {
             />
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="bg-surface py-24">
+      <motion.section className="bg-surface py-24" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7 }}>
         <div className="section-shell">
           <div className="mx-auto mb-14 max-w-2xl text-center">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">What we do</p>
@@ -307,9 +313,9 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="bg-dark py-24 text-white">
+      <motion.section className="bg-dark py-24 text-white" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7 }}>
         <div className="section-shell">
           <div className="mx-auto mb-14 max-w-2xl text-center">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">Why choose TechKing</p>
@@ -328,9 +334,9 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="bg-white py-24">
+      <motion.section className="bg-white py-24" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7 }}>
         <div className="section-shell">
           <div className="mb-14 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
@@ -361,9 +367,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="bg-surface py-24">
+      <motion.section className="bg-surface py-24" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7 }}>
         <div className="section-shell">
           <div className="mx-auto mb-14 max-w-2xl text-center">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">Featured work</p>
@@ -398,9 +404,9 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="bg-white py-24">
+      <motion.section className="bg-white py-24" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7 }}>
         <div className="section-shell">
           <div className="mx-auto mb-14 max-w-2xl text-center">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">How we work</p>
@@ -419,9 +425,9 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="bg-white py-24">
+      <motion.section className="bg-white py-24" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7 }}>
         <div className="section-shell">
           <div className="mx-auto mb-14 max-w-2xl text-center">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">Reviews</p>
@@ -440,9 +446,9 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="bg-primary py-20 text-white">
+      <motion.section className="bg-primary py-20 text-white" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7 }}>
         <div className="section-shell">
           <div className="rounded-[32px] border border-white/10 bg-gradient-to-r from-primary to-[#b71d1d] p-8 shadow-[0_20px_60px_rgba(215,40,40,0.3)] md:p-12">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
@@ -465,9 +471,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="bg-white py-24">
+      <motion.section className="bg-white py-24" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7 }}>
         <div className="section-shell">
           <div className="mb-14 text-center">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">Meet the team</p>
@@ -488,9 +494,9 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="bg-surface py-24">
+      <motion.section className="bg-surface py-24" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7 }}>
         <div className="section-shell">
           <div className="mb-14 text-center">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">Our focus</p>
@@ -508,9 +514,9 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="border-t border-dark/5 bg-beige/30 py-16">
+      <motion.section className="border-t border-dark/5 bg-beige/30 py-16" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7 }}>
         <div className="section-shell">
           <div className="grid gap-8 md:grid-cols-3">
             <div className="flex items-center gap-4 rounded-[24px] bg-white p-4 shadow-sm ring-1 ring-dark/5">
@@ -544,7 +550,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }
