@@ -5,11 +5,11 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Playfair Display", ui-serif, Georgia, serif;
 
-  --color-primary: #ef4444;
-  --color-primary-strong: #b91c1c;
-  --color-accent: #f97316;
-  --color-rose: #fb7185;
-  --color-gold: #fbbf24;
+  --color-primary: #b91c1c;
+  --color-primary-strong: #7f1d1d;
+  --color-accent: #c2410c;
+  --color-rose: #be123c;
+  --color-gold: #f59e0b;
   --color-beige: #fffaf5;
   --color-surface: #f8fafc;
   --color-dark: #111827;
@@ -24,13 +24,13 @@
   body {
     @apply bg-beige text-dark font-sans antialiased;
     background:
-      radial-gradient(circle at top left, rgba(239, 68, 68, 0.12), transparent 25%),
-      radial-gradient(circle at bottom right, rgba(249, 115, 22, 0.1), transparent 25%),
+      radial-gradient(circle at top left, rgba(185, 28, 28, 0.15), transparent 25%),
+      radial-gradient(circle at bottom right, rgba(194, 65, 12, 0.1), transparent 25%),
       linear-gradient(135deg, #fff7ed 0%, #fffaf5 38%, #f4f6ff 100%);
   }
 
   ::selection {
-    background: rgba(239, 68, 68, 0.18);
+    background: rgba(185, 28, 28, 0.18);
   }
 
   a {
@@ -54,7 +54,7 @@
   }
 
   .brand-gradient {
-    background: linear-gradient(135deg, #ef4444 0%, #f97316 52%, #fbbf24 100%);
+    background: linear-gradient(135deg, #7f1d1d 0%, #b91c1c 42%, #f59e0b 100%);
   }
 }
 

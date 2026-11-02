@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ShoppingBag, Trash2, Plus, Minus, CheckCircle, Loader2, X, Sparkles, CreditCard, Truck, ArrowRight } from "lucide-react";
+import { ShoppingBag, Trash2, Plus, Minus, CheckCircle, Loader2, X, CreditCard, Truck, ArrowRight } from "lucide-react";
 import { cn } from "@/src/lib/utils";
 
 const products = [
-  { id: "1", name: "Starter Website Package", price: 450, desc: "A clean, modern website for new businesses ready to establish credibility online.", category: "Launch" },
-  { id: "2", name: "Business Growth Site", price: 750, desc: "A stronger website for brands that want better visibility and more customer inquiries.", category: "Growth" },
-  { id: "3", name: "Brand Identity Pack", price: 600, desc: "Brand direction, messaging, and creative assets to sharpen your market presence.", category: "Branding" },
-  { id: "4", name: "SEO Booster", price: 500, desc: "Search optimization and content setup to help attract quality traffic.", category: "Marketing" },
-  { id: "5", name: "Landing Page Sprint", price: 350, desc: "A focused page built to convert visitors for campaigns, offers, or launches.", category: "Campaign" },
-  { id: "6", name: "Portfolio Website", price: 680, desc: "A premium portfolio or personal brand website to showcase your work and expertise.", category: "Portfolio" },
-  { id: "7", name: "E-commerce Setup", price: 1200, desc: "An online shop experience designed to sell products or services smoothly.", category: "Commerce" },
-  { id: "8", name: "Maintenance Plan", price: 260, desc: "Ongoing support, fixes, and updates to keep your site fast and reliable.", category: "Support" },
+  { id: "1", name: "Starter Website Package", price: 450, desc: "A clean, modern website for new businesses ready to establish credibility online.", category: "Launch", image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=900" },
+  { id: "2", name: "Business Growth Site", price: 750, desc: "A stronger website for brands that want better visibility and more customer inquiries.", category: "Growth", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=900" },
+  { id: "3", name: "Brand Identity Pack", price: 600, desc: "Brand direction, messaging, and creative assets to sharpen your market presence.", category: "Branding", image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=900" },
+  { id: "4", name: "SEO Booster", price: 500, desc: "Search optimization and content setup to help attract quality traffic.", category: "Marketing", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=900" },
+  { id: "5", name: "Landing Page Sprint", price: 350, desc: "A focused page built to convert visitors for campaigns, offers, or launches.", category: "Campaign", image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=900" },
+  { id: "6", name: "Portfolio Website", price: 680, desc: "A premium portfolio or personal brand website to showcase your work and expertise.", category: "Portfolio", image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=900" },
+  { id: "7", name: "E-commerce Setup", price: 1200, desc: "An online shop experience designed to sell products or services smoothly.", category: "Commerce", image: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&q=80&w=900" },
+  { id: "8", name: "Maintenance Plan", price: 260, desc: "Ongoing support, fixes, and updates to keep your site fast and reliable.", category: "Support", image: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&q=80&w=900" },
 ];
 
 const packageHighlights = [
@@ -133,9 +133,14 @@ export default function Shop() {
               whileHover={{ y: -5 }}
               className="bg-white p-6 rounded-3xl shadow-sm border border-primary/5 hover:border-primary/20 transition-all flex flex-col"
             >
-              <div className="bg-beige/50 rounded-2xl h-48 flex items-center justify-center mb-6 relative overflow-hidden group">
-                <Sparkles className="w-16 h-16 text-primary/20 group-hover:scale-110 transition-transform duration-500" />
-                <span className="absolute top-4 left-4 bg-white/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-primary uppercase tracking-widest border border-primary/10">
+              <div className="relative mb-6 overflow-hidden rounded-2xl bg-beige/50">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  referrerPolicy="no-referrer"
+                />
+                <span className="absolute left-4 top-4 rounded-full border border-primary/10 bg-white/80 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary backdrop-blur-md">
                   {product.category}
                 </span>
               </div>
@@ -176,7 +181,7 @@ export default function Shop() {
             <ul className="mt-8 space-y-4 text-white/75">
               <li className="flex items-center gap-3"><Truck className="h-4 w-4 text-gold" /> Fast setup and guided delivery</li>
               <li className="flex items-center gap-3"><CreditCard className="h-4 w-4 text-gold" /> Simple package choices for different business stages</li>
-              <li className="flex items-center gap-3"><Sparkles className="h-4 w-4 text-gold" /> Premium presentation without overcomplication</li>
+              <li className="flex items-center gap-3"><CheckCircle className="h-4 w-4 text-gold" /> Premium presentation without overcomplication</li>
             </ul>
           </div>
         </div>
@@ -219,9 +224,12 @@ export default function Shop() {
                 ) : (
                   cart.map((item) => (
                     <div key={item.product.id} className="flex gap-4 items-center bg-beige/20 p-4 rounded-2xl border border-primary/5">
-                      <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shrink-0">
-                        <Sparkles className="w-8 h-8 text-primary/20" />
-                      </div>
+                      <img
+                        src={item.product.image}
+                        alt={item.product.name}
+                        className="h-16 w-16 rounded-xl object-cover shrink-0 border border-primary/10"
+                        referrerPolicy="no-referrer"
+                      />
                       <div className="flex-grow">
                         <h4 className="font-bold text-sm">{item.product.name}</h4>
                         <p className="text-primary font-bold text-sm">GHS {item.product.price}</p>

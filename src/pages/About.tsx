@@ -39,7 +39,7 @@ export default function About() {
             About TechKing Bingo
           </motion.h1>
           <p className="text-xl text-dark/80 max-w-2xl mx-auto leading-relaxed">
-            We are a digital-first agency helping businesses build a strong online presence and grow with confidence.
+            Founded by King-Bi Emmanuella of The Elle Corporations, we help businesses build stronger digital systems and growth-focused online experiences.
           </p>
         </div>
       </section>
@@ -49,13 +49,13 @@ export default function About() {
           <div className="space-y-8">
             <h2 className="text-4xl font-serif font-bold text-dark leading-tight">Our story & mission</h2>
             <p className="text-lg text-dark/70 leading-relaxed">
-              TechKing Bingo was founded to help businesses turn online visibility into real momentum. We believe a strong digital presence should do more than look good — it should build trust, create clarity, and generate results.
+              TechKing Bingo was founded by King-Bi Emmanuella of the Elle Corporations in 2025 as a way to help businesses in Ghana have an online presence, connect with customers, and also increase productivity. We believe that a strong digital presence should do more than look good — it should build trust, create clarity, and generate results.
             </p>
             <div className="bg-primary/5 p-8 rounded-3xl border-l-4 border-primary italic text-primary font-medium">
               “We turn ideas into digital experiences that help businesses grow, stand out, and win more attention.”
             </div>
             <p className="text-dark/70 leading-relaxed">
-              Whether it is a clean business website, a clear brand story, or a better online customer journey, we work closely with clients to create solutions that fit their goals.
+              TechKing Bingo later established partnerships with NextEdge Designs and Pixelink Studios, which helped bring this company to its best. To this day, we continue to thrive by bringing out the best in our clients at every stage of their journey.
             </p>
           </div>
           <div className="relative">
@@ -128,10 +128,10 @@ export default function About() {
 
           <div className="grid grid-cols-2 gap-5">
             {[
-              { label: "Happy Clients", value: "500+", icon: <Users className="h-6 w-6 text-gold" /> },
-              { label: "Web Projects", value: "120+", icon: <Globe className="h-6 w-6 text-primary" /> },
-              { label: "Creative Experts", value: "12", icon: <Award className="h-6 w-6 text-gold" /> },
-              { label: "Growth Focus", value: "100%", icon: <Target className="h-6 w-6 text-primary" /> }
+              { label: "Founding year", value: "2025", icon: <Users className="h-6 w-6 text-gold" /> },
+              { label: "Partners", value: "2+", icon: <Globe className="h-6 w-6 text-primary" /> },
+              { label: "Focus areas", value: "12+", icon: <Award className="h-6 w-6 text-gold" /> },
+              { label: "Growth focus", value: "100%", icon: <Target className="h-6 w-6 text-primary" /> }
             ].map((stat, idx) => (
               <div key={idx} className="space-y-4 rounded-[28px] border border-primary/5 bg-white p-6 text-center shadow-sm">
                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">{stat.icon}</div>
@@ -151,27 +151,6 @@ export default function About() {
             Talk to us
             <ArrowRight className="h-4 w-4" />
           </Link>
-        </div>
-      </section>
-
-      <section className="py-24 bg-dark text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
-            {[
-              { label: "Happy Clients", value: "500+", icon: <Users className="w-6 h-6 text-gold" /> },
-              { label: "Web Projects", value: "120+", icon: <Globe className="w-6 h-6 text-primary" /> },
-              { label: "Creative Experts", value: "12", icon: <Award className="w-6 h-6 text-gold" /> },
-              { label: "Growth Focus", value: "100%", icon: <Target className="w-6 h-6 text-primary" /> }
-            ].map((stat, idx) => (
-              <div key={idx} className="space-y-4">
-                <div className="mx-auto w-12 h-12 bg-white/5 rounded-full flex items-center justify-center">
-                  {stat.icon}
-                </div>
-                <p className="text-3xl md:text-4xl font-serif font-bold text-gold">{stat.value}</p>
-                <p className="text-xs font-bold uppercase tracking-widest text-white/40">{stat.label}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
     </div>

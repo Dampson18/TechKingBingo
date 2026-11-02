@@ -1,6 +1,29 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, Code2, Sparkles, Star, BadgeCheck, Rocket, LayoutTemplate } from "lucide-react";
+import { ArrowRight, CheckCircle2, Code2, Sparkles } from "lucide-react";
+
+const serviceHighlights = [
+  {
+    title: "Business-first design",
+    text: "Every page is structured around your offer, customer journey, and conversion goals.",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=900",
+  },
+  {
+    title: "Modern UI systems",
+    text: "We use strong visual hierarchy, clean layouts, and premium design patterns that feel credible.",
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=900",
+  },
+  {
+    title: "Launch-ready build",
+    text: "Your website is designed to look polished and perform smoothly across screens and devices.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=900",
+  },
+  {
+    title: "Support after launch",
+    text: "We help you stay confident with updates, improvements, and guidance after your site goes live.",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=900",
+  },
+];
 
 const pricingPlans = [
   {
@@ -9,6 +32,7 @@ const pricingPlans = [
     detail: "For freelancers & micro-startups running a single campaign",
     features: ["1–3 page site", "contact form", "mobile responsiveness", "social media links", "SSL/TLS setup"],
     timeline: "3–7 days",
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=900",
   },
   {
     name: "Standard Business Website",
@@ -16,6 +40,7 @@ const pricingPlans = [
     detail: "For growing SMEs & local businesses — law firms, clinics, and more",
     features: ["5–15 pages", "content management system", "basic SEO setup", "Google Maps integration", "professional email setup"],
     timeline: "1–3 weeks",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=900",
   },
   {
     name: "E-commerce Platform",
@@ -23,6 +48,7 @@ const pricingPlans = [
     detail: "For retailers & online shops",
     features: ["Product catalogue", "shopping cart", "inventory management", "local payment gateway integration", "SSL/TLS setup"],
     timeline: "2–5 weeks",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=900",
   },
   {
     name: "Website Redesign",
@@ -30,6 +56,7 @@ const pricingPlans = [
     detail: "For any client with an existing website",
     features: ["Updated design", "SEO improvements", "modern UI/UX", "speed optimisation", "content migration"],
     timeline: "1–3 weeks",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=900",
   },
   {
     name: "Custom Web Solutions",
@@ -37,6 +64,7 @@ const pricingPlans = [
     detail: "Tailored web applications, client portals, booking systems, and enterprise solutions.",
     features: ["Custom build", "project planning", "scoped delivery", "integration-ready architecture"],
     timeline: "Custom",
+    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=900",
   },
 ];
 
@@ -64,6 +92,28 @@ const faqs = [
   { q: "Do you offer ongoing website support?", a: "Yes. We provide maintenance and support packages for updates, content changes, bug fixes, and technical upkeep after launch." },
 ];
 
+const serviceList = [
+  "Custom website development and monthly maintenance for corporate, e-commerce, and portfolio sites.",
+  "Website maintenance and updates.",
+  "SEO and performance optimization.",
+  "Hosting and domain setup support.",
+  "Website redesigning.",
+  "Logo design.",
+  "Mobile app development.",
+  "Branding.",
+  "AI chatbot integration.",
+  "Business automation.",
+  "Website security packages.",
+  "UI/UX design.",
+  "Custom software development.",
+  "Cloud solutions.",
+  "Cybersecurity services.",
+  "Digital marketing.",
+  "IT consulting.",
+  "Technology training.",
+  "AI-powered business solutions.",
+];
+
 export default function Services() {
   return (
     <div className="bg-beige/20 min-h-screen pb-24">
@@ -83,28 +133,50 @@ export default function Services() {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-6xl font-serif font-bold mb-6"
           >
-            TechKing Bingo Web Development Info
+            TechKing Bingo Services
           </motion.h1>
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
-            Your business, built for the web. From a single landing page to a full online store — every project scoped, priced, and delivered on a clear timeline.
+            TechKing Bingo is here to help businesses improve efficiency, streamline operations, and grow through powerful web design, digital strategy, and business software solutions.
           </p>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-4">
-          {[
-            { icon: <BadgeCheck className="h-6 w-6 text-primary" />, title: "Business-first design", text: "Every page is structured around your offer, customer journey, and conversion goals." },
-            { icon: <LayoutTemplate className="h-6 w-6 text-primary" />, title: "Modern UI systems", text: "We use strong visual hierarchy, clean layouts, and premium design patterns that feel credible." },
-            { icon: <Rocket className="h-6 w-6 text-primary" />, title: "Launch-ready build", text: "Your website is designed to look polished and perform smoothly across screens and devices." },
-            { icon: <Star className="h-6 w-6 text-primary" />, title: "Support after launch", text: "We help you stay confident with updates, improvements, and guidance after your site goes live." },
-          ].map((item) => (
-            <div key={item.title} className="rounded-[28px] border border-primary/10 bg-white p-6 shadow-sm">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10">{item.icon}</div>
-              <h3 className="mt-5 text-xl font-bold text-dark">{item.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-dark/65">{item.text}</p>
+          {serviceHighlights.map((item) => (
+            <div key={item.title} className="overflow-hidden rounded-[28px] border border-primary/10 bg-white shadow-sm">
+              <img
+                src={item.image}
+                alt={item.title}
+                className="h-44 w-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-dark">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-dark/65">{item.text}</p>
+              </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-4 mb-12">
+          <div className="bg-primary/10 p-3 rounded-2xl">
+            <Code2 className="text-primary w-8 h-8" />
+          </div>
+          <h2 className="text-4xl font-serif font-bold">Services overview</h2>
+        </div>
+
+        <div className="rounded-[30px] border border-primary/10 bg-white p-8 shadow-sm">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {serviceList.map((service) => (
+              <div key={service} className="flex items-start gap-3 rounded-2xl bg-beige/30 p-4 text-sm text-dark/75">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                <span>{service}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -124,27 +196,36 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.05 }}
               viewport={{ once: true }}
-              className="bg-white p-8 rounded-3xl shadow-sm border border-primary/5 hover:border-primary/20 transition-all group flex flex-col h-full"
+              className="group flex h-full flex-col overflow-hidden rounded-3xl border border-primary/5 bg-white shadow-sm transition-all hover:border-primary/20"
             >
-              <div className="mb-6">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">{plan.name}</p>
-                <h3 className="mt-3 text-3xl font-serif font-bold text-dark">{plan.price}</h3>
-                <p className="mt-3 text-sm text-dark/60">{plan.detail}</p>
-              </div>
+              <img
+                src={plan.image}
+                alt={plan.name}
+                className="h-48 w-full object-cover"
+                referrerPolicy="no-referrer"
+              />
 
-              <div className="space-y-3 mb-6 flex-grow">
-                {plan.features.map((feature, i) => (
-                  <div key={i} className="flex items-start gap-2 text-sm text-dark/80">
-                    <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                    <span>{feature}</span>
-                  </div>
-                ))}
-              </div>
+              <div className="flex flex-1 flex-col p-8">
+                <div className="mb-6">
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">{plan.name}</p>
+                  <h3 className="mt-3 text-3xl font-serif font-bold text-dark">{plan.price}</h3>
+                  <p className="mt-3 text-sm text-dark/60">{plan.detail}</p>
+                </div>
 
-              <div className="border-t border-primary/10 pt-4 mt-auto">
-                <span className="inline-flex rounded-full bg-primary/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
-                  {plan.timeline}
-                </span>
+                <div className="space-y-3 mb-6 flex-grow">
+                  {plan.features.map((feature, i) => (
+                    <div key={i} className="flex items-start gap-2 text-sm text-dark/80">
+                      <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                      <span>{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="border-t border-primary/10 pt-4 mt-auto">
+                  <span className="inline-flex rounded-full bg-primary/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-primary">
+                    {plan.timeline}
+                  </span>
+                </div>
               </div>
             </motion.div>
           ))}

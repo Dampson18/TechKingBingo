@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="TechKing Bingo logo">
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#b91c1c"/>
+      <stop offset="100%" stop-color="#7f1d1d"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#bg)"/>
+  <path d="M18 30h11.5v18H18zM34.5 16h11.5v32H34.5z" fill="#fff" opacity="0.96"/>
+  <path d="M20 18h10.5v9H20z" fill="#fbbf24" opacity="0.95"/>
+  <path d="M18 30h28v6H18z" fill="#fff" opacity="0.8"/>
+</svg>

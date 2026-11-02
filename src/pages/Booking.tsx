@@ -26,6 +26,9 @@ const bookingBenefits = [
   "You get clear next steps without the pressure of a hard-sell pitch.",
 ];
 
+const whatsappNumber = "233592998435";
+const emailAddress = "techkingbingo@gmail.com";
+
 export default function Booking() {
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -42,6 +45,17 @@ export default function Booking() {
     e.preventDefault();
     setLoading(true);
 
+    const bookingMessage = [
+      "Hello TechKing Bingo,",
+      "I would like to book a discovery call.",
+      `Name: ${formData.name}`,
+      `Phone: ${formData.phone}`,
+      `Service: ${formData.service}`,
+      `Preferred date: ${formData.date}`,
+      `Preferred time: ${formData.time}`,
+      "Please let me know the best next step.",
+    ].join("\n");
+
     try {
       const res = await fetch("/api/bookings", {
         method: "POST",
@@ -50,10 +64,21 @@ export default function Booking() {
       });
 
       if (res.ok) {
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(bookingMessage)}`;
+        const emailSubject = encodeURIComponent(`Booking Request: ${formData.service}`);
+        const emailBody = encodeURIComponent(`${bookingMessage}\n\nKind regards,\n${formData.name}`);
+        const emailUrl = `mailto:${emailAddress}?subject=${emailSubject}&body=${emailBody}`;
+
+        window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+        setTimeout(() => {
+          window.location.href = emailUrl;
+        }, 300);
+
         setSuccess(true);
       }
     } catch (err) {
       console.error("Booking failed:", err);
+      setSuccess(false);
     } finally {
       setLoading(false);
     }
@@ -75,7 +100,7 @@ export default function Booking() {
           </div>
           <h2 className="text-3xl font-serif font-bold mb-4 text-dark">Call request received</h2>
           <p className="text-dark/60 mb-8 leading-relaxed">
-            Thank you, <span className="font-bold text-primary">{formData.name}</span>. Your request for <span className="font-bold">{formData.service}</span> on <span className="font-bold">{formData.date}</span> at <span className="font-bold">{formData.time}</span> has been scheduled.
+            Thank you, <span className="font-bold text-primary">{formData.name}</span>. Your booking request for <span className="font-bold">{formData.service}</span> on <span className="font-bold">{formData.date}</span> at <span className="font-bold">{formData.time}</span> has been prepared and sent to WhatsApp and email.
           </p>
           <button
             onClick={() => window.location.href = "/"}

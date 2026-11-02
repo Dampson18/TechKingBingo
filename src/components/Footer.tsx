@@ -11,15 +11,18 @@ export default function Footer() {
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-sm font-black text-white shadow-lg shadow-primary/20">
                 TK
               </div>
-              <span className="font-serif text-2xl font-bold tracking-tight text-white">
-                TechKing Bingo
-              </span>
+              <div className="leading-tight">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold">The Elle Corporations</p>
+                <span className="font-serif text-2xl font-bold tracking-tight text-white">
+                  TechKing Bingo
+                </span>
+              </div>
             </div>
             <p className="max-w-xs text-sm leading-relaxed text-white/60">
-              TechKing Bingo creates premium website experiences, digital branding, and business growth systems that help companies stand out online.
+              TechKing Bingo helps businesses improve their online presence, connect with customers, and increase productivity through smart digital solutions.
             </p>
             <div className="flex gap-3">
-              <a href="https://wa.me/233592998425" target="_blank" rel="noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/80 transition hover:bg-primary hover:text-white">
+              <a href="https://wa.me/233592998435" target="_blank" rel="noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/80 transition hover:bg-primary hover:text-white">
                 <MessageCircle className="h-4 w-4" />
               </a>
             </div>
@@ -39,11 +42,11 @@ export default function Footer() {
           <div>
             <h4 className="mb-6 font-serif text-lg font-bold text-white">Core Services</h4>
             <ul className="space-y-4 text-sm text-white/60">
-              <li>Website Design</li>
-              <li>Brand Strategy</li>
-              <li>E-commerce Stores</li>
-              <li>SEO & Growth</li>
-              <li>Maintenance Support</li>
+              <li>Custom Website Development</li>
+              <li>Website Redesign</li>
+              <li>SEO & Performance Optimization</li>
+              <li>Branding & Logo Design</li>
+              <li>AI Chatbot Integration</li>
             </ul>
           </div>
 
@@ -56,26 +59,26 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 shrink-0 text-gold" />
-                <span>+233 59 299 8425</span>
+                <span>059 299 8435</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 shrink-0 text-gold" />
                 <span>techkingbingo@gmail.com</span>
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-gold">Web:</span>
-                <span>www.techbingo.com</span>
+                <span className="text-gold">WhatsApp:</span>
+                <span>+233592998435</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-white/45 md:flex-row">
-          <p>© 2026 TechKing Bingo. All rights reserved.</p>
+          <p>© 2026 TechKing Bingo by The Elle Corporations. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <a href="#" className="hover:text-white">Privacy Policy</a>
             <a href="#" className="hover:text-white">Terms of Service</a>
-            <a href="https://wa.me/233592998425" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-white/70 hover:text-white">
+            <a href="https://wa.me/233592998435" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-white/70 hover:text-white">
               Contact
               <ArrowUpRight className="h-3.5 w-3.5" />
             </a>

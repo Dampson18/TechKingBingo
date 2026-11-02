@@ -25,9 +25,12 @@ export default function Navbar() {
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-sm font-black text-white shadow-lg shadow-primary/20 ring-4 ring-primary/10">
                 TK
               </div>
-              <span className="font-serif text-xl font-bold text-dark tracking-tight">
-                TechKing Bingo
-              </span>
+              <div className="leading-tight">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">The Elle Corporations</p>
+                <span className="font-serif text-lg font-bold text-dark tracking-tight sm:text-xl">
+                  TechKing Bingo
+                </span>
+              </div>
             </Link>
 
             <div className="hidden items-center gap-8 md:flex">

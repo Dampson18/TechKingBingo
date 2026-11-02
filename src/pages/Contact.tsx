@@ -17,6 +17,15 @@ const responseSteps = [
   { title: "Move into build mode", desc: "Once approved, we design, build, and launch with clear communication all the way through." },
 ];
 
+const contactLinks = {
+  email: "techkingbingo@gmail.com",
+  phone: "059 299 8435",
+  whatsapp: "+233592998435",
+  instagram: "@techkingbingo",
+  tiktok: "@techkingbingo",
+  youtube: "TechKing Bingo",
+};
+
 export default function Contact() {
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
@@ -75,7 +84,7 @@ export default function Contact() {
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">Fast response</p>
             <h3 className="mt-4 font-serif text-3xl font-bold text-white">Quick answers, clear direction, and no generic sales talk.</h3>
             <p className="mt-4 text-base leading-relaxed text-white/75">We are happy to talk through your needs, recommend the right approach, and help you decide the next best move for your business.</p>
-            <a href="https://wa.me/233592998425" target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-white hover:bg-primary/90">
+            <a href="https://wa.me/233592998435" target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-white hover:bg-primary/90">
               Message on WhatsApp
               <ArrowRight className="h-4 w-4" />
             </a>
@@ -103,7 +112,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-dark/40 uppercase tracking-widest mb-1">WhatsApp</p>
-                    <p className="text-lg font-bold text-dark">+233 59 299 8425</p>
+                    <p className="text-lg font-bold text-dark">{contactLinks.whatsapp}</p>
                     <p className="text-dark/60">Fast responses for new projects and support</p>
                   </div>
                 </div>
@@ -113,8 +122,29 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-dark/40 uppercase tracking-widest mb-1">Call us</p>
-                    <p className="text-lg font-bold text-dark">+233 59 299 8425</p>
+                    <p className="text-lg font-bold text-dark">{contactLinks.phone}</p>
                     <p className="text-dark/60">Speak directly with the TechKing Bingo team</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-6 group">
+                  <div className="bg-primary/10 p-4 rounded-2xl group-hover:bg-primary group-hover:text-white transition-all">
+                    <MessageCircle className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-dark/40 uppercase tracking-widest mb-1">Email</p>
+                    <p className="text-lg font-bold text-dark">{contactLinks.email}</p>
+                    <p className="text-dark/60">We reply to all inquiries and project requests.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-6 group">
+                  <div className="bg-amber-100 p-4 rounded-2xl group-hover:bg-amber-500 group-hover:text-white transition-all">
+                    <MessageCircle className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-dark/40 uppercase tracking-widest mb-1">Socials</p>
+                    <p className="text-lg font-bold text-dark">Instagram: {contactLinks.instagram}</p>
+                    <p className="text-lg font-bold text-dark">TikTok: {contactLinks.tiktok}</p>
+                    <p className="text-lg font-bold text-dark">YouTube: {contactLinks.youtube}</p>
                   </div>
                 </div>
               </div>
